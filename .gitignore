@@ -4,3 +4,4 @@ build/
 tmp/
 .env
 .DS_Store
+.json
