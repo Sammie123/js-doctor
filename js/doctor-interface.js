@@ -1,11 +1,11 @@
-var apiKey = require('./../.env').apiKey;
 var Doctor = require('./../js/doctor.js').doctorModule;
 
 $(document).ready(function() {
+  var listDoctor = new Doctor();
   $('#findDoctor').click(function() {
     var symptoms = $('#symptoms').val();
-    var currentDoctor = new Doctor();
-    currentDoctor.getDoctors();
+    var showDoctor = listDoctor.getDoctors(symptoms);
+    console.log(showDoctor);
     console.log(symptoms);
   });
 });
