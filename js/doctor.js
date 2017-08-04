@@ -8,11 +8,11 @@ Doctor.prototype.getDoctors = function(medicalIssue) {
    .then(function(result) {
       console.log(result);
       // var arrayDoctors = [];
-      for (i = 0; i < result.data.length; i++) {
-        var example = result.data[i].practices[0].name;
+      for (i = 0; i < result.data[0].practices.length; i++) {
+        var example = result.data[0].practices[i].name;
         console.log(example)
         // arrayDoctors.push(example)
-        $('.showDoctor').append("<h4>" + result.data[i].practices[0].name + "</h2>" + result.data[i].practices[0].visit_address.street + "<br>" + result.data[i].practices[0].visit_address.city + ", " + result.data[i].practices[0].visit_address.state + ", " + result.data[i].practices[0].visit_address.zip);
+        $('.showDoctor').append("<h4>" + result.data[i].practices[0].name + "</h2>" + result.data[i].practices[0].visit_address.street + "<br>" + result.data[i].practices[0].visit_address.city + ", " + result.data[i].practices[0].visit_address.state + " " + result.data[i].practices[0].visit_address.zip);
       }
     })
    .fail(function(error){
