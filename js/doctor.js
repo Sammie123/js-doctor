@@ -12,7 +12,7 @@ Doctor.prototype.getDoctors = function(medicalIssue) {
         var response = result.data[i].practices[0].name;
         arrayList.push(response);
         console.log(response);
-        $('.showDoctor').append("<h4>" + result.data[i].practices[0].name + "</h4>" + result.data[i].practices[0].visit_address.street + "<br>" + result.data[i].practices[0].visit_address.city + ", " + result.data[i].practices[0].visit_address.state + " " + result.data[i].practices[0].visit_address.zip + "<br>" + "Phone Number: " + result.data[i].practices[0].phones[0].number);
+        $('.showDoctor').append("<h4>" + result.data[i].practices[0].name + "</h4>");
       }
       // $('.showDoctor').append("<li>" + arrayList + "</li>");
     })
